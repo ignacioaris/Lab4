@@ -129,19 +129,12 @@ public class Main {
             }
             break;
             case 7:
-            System.out.println("seleccione una cancion");
-            for(Cancion cancion : radio.getListaReproduccion().getCanciones()){
-                System.out.println(cancion);
-            }
-            choice = sc.nextLine();
-            for(Cancion cancion : radio.getListaReproduccion().getCanciones()){
-                if(choice.equals(cancion.getNombre())){
-                    radio.reproducirCancion(cancion);
-                }
-            }
+            radio.reproducirCancion();
+            System.out.println("Reproduciendo: " + radio.getCancion());
             break;
             case 8:
-            //radio.cambiarCancion();
+            radio.cambiarCancion();
+            System.out.println("Reproduciendo: " + radio.getCancion());
             break;
             case 9:
             System.out.println("informacion de la cancion actual");
