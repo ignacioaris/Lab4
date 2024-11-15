@@ -11,8 +11,8 @@ public interface IRadioClaseA {
     void cargarEmisora(int indice);
 
     void seleccionarLista(ListaReproduccion lista);
-    void reproducirCancion(Cancion cancion);
-    void cambiarCancion(Cancion cancion);
+    void reproducirCancion();
+    void cambiarCancion();
     void mostrarInfoCancion();
 
     void conectarTelefono();
