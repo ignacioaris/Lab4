@@ -14,6 +14,7 @@ public class RadioClaseA implements IRadioClaseA {
     private boolean altavozActivo;
     private Cancion cancionActual;
     private ArrayList<Viaje> viajes;
+    private int indiceCancion;
 
     public RadioClaseA(){
         this.encendido = false;
@@ -132,15 +133,18 @@ public class RadioClaseA implements IRadioClaseA {
     @Override
     public void seleccionarLista(ListaReproduccion lista) {
         listaActual = lista;
+        indiceCancion = 0;
     }
 
     @Override
-    public void reproducirCancion(Cancion cancion){
-        cancionActual = cancion;
+    public void reproducirCancion(){
+        cancionActual = listaActual.getCanciones().get(indiceCancion);
     }
     @Override
-    public void cambiarCancion(Cancion cancion) {
-            cancionActual = cancion;
+    public void cambiarCancion() {
+            if(listaActual != null){
+                indiceCancion +=1 % listaActual.getCanciones().size();
+            }
     }
 
     @Override
